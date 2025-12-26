@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ReactNode } from 'react';
 import { handleImageError } from '../utils/imageHelpers';
+import { useLogoPath } from '../utils/logoHelpers';
 
 interface AuthLayoutProps {
   children: ReactNode;
@@ -10,6 +11,7 @@ interface AuthLayoutProps {
 
 export const AuthLayout = ({ children, logoSize = 'large', showLogo = true }: AuthLayoutProps) => {
   const logoClass = logoSize === 'large' ? 'h-40 w-auto' : 'h-16 w-auto';
+  const logoPath = useLogoPath();
 
   return (
     <div className="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
@@ -17,7 +19,7 @@ export const AuthLayout = ({ children, logoSize = 'large', showLogo = true }: Au
         {showLogo && (
           <Link to="/" className="flex items-center justify-center mb-2">
             <img
-              src="/images/logo.png"
+              src={logoPath}
               alt="LibraHub Logo"
               className={`${logoClass} object-contain`}
               onError={handleImageError}

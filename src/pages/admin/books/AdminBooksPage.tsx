@@ -71,10 +71,10 @@ export const AdminBooksPage = () => {
   return (
     <AdminLayout>
       <div className="max-w-7xl">
-        <div className="mb-8 flex items-center justify-between">
+        <div className="page-header">
           <div>
-            <h1 className="text-3xl font-bold mb-2 text-foreground">Manage Books</h1>
-            <p className="text-muted-foreground">Create, update, publish, and manage books, pricing, and content</p>
+            <h1 className="page-title">Manage Books</h1>
+            <p className="page-description">Create, update, publish, and manage books, pricing, and content</p>
           </div>
           <Button onClick={() => openAction('create')} className="gap-2">
             <Plus className="h-4 w-4" />
@@ -189,7 +189,7 @@ export const AdminBooksPage = () => {
         ) : (
           <Card>
             <CardHeader>
-              <div className="flex items-center justify-between">
+              <div className="card-header-flex">
                 <CardTitle>Books ({totalCount})</CardTitle>
                 <BookSearchBar value={searchQuery} onChange={setSearchQuery} />
               </div>
@@ -204,12 +204,12 @@ export const AdminBooksPage = () => {
                   <div className="overflow-x-auto">
                     <table className="w-full">
                       <thead>
-                        <tr className="border-b">
-                          <th className="text-left p-4 font-medium text-foreground">Title & Author</th>
-                          <th className="text-left p-4 font-medium text-foreground">Price</th>
-                          <th className="text-left p-4 font-medium text-foreground">Status</th>
-                          <th className="text-left p-4 font-medium text-foreground">Categories</th>
-                          <th className="text-right p-4 font-medium text-foreground">Actions</th>
+                        <tr className="table-header">
+                          <th className="table-header-cell">Title & Author</th>
+                          <th className="table-header-cell">Price</th>
+                          <th className="table-header-cell">Status</th>
+                          <th className="table-header-cell">Categories</th>
+                          <th className="table-header-cell-right">Actions</th>
                         </tr>
                       </thead>
                       <tbody>

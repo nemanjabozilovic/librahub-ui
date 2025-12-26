@@ -35,10 +35,10 @@ export const BookTableRow = ({
   return (
     <>
       <tr
-        className="border-b hover:bg-muted/50 cursor-pointer"
+        className="table-row"
         onClick={onToggleExpanded}
       >
-        <td className="p-4">
+        <td className="table-cell">
           <div className="flex items-center gap-3">
             {isExpanded ? (
               <ChevronUp className="h-4 w-4 text-muted-foreground flex-shrink-0" />
@@ -67,7 +67,7 @@ export const BookTableRow = ({
             </div>
           </div>
         </td>
-        <td className="p-4">
+        <td className="table-cell">
           {book.pricing ? (
             <div>
               <div className="font-medium text-foreground">
@@ -83,8 +83,8 @@ export const BookTableRow = ({
             <span className="text-muted-foreground">No price set</span>
           )}
         </td>
-        <td className="p-4">{getBookStatusBadge(book.status)}</td>
-        <td className="p-4">
+        <td className="table-cell">{getBookStatusBadge(book.status)}</td>
+        <td className="table-cell">
           <div className="text-sm text-muted-foreground">
             {book.categories.length > 0 ? (
               <div className="flex flex-wrap gap-1">
@@ -102,8 +102,8 @@ export const BookTableRow = ({
             )}
           </div>
         </td>
-        <td className="p-4">
-          <div className="flex justify-end gap-1 flex-wrap">
+        <td className="table-cell">
+          <div className="table-actions">
             {!isRemoved && (
               <>
                 <Button

@@ -7,6 +7,7 @@ import {
 } from '../../features/auth/store/authSelectors';
 import { getRedirectPathForRole } from '../../shared/utils/auth';
 import { handleImageError } from '../../shared/utils/imageHelpers';
+import { useLogoPath } from '../../shared/utils/logoHelpers';
 import { LoadingSpinner } from '../../shared/components';
 import { Button } from '../../shared/components/ui/button';
 import {
@@ -21,6 +22,7 @@ export const HomePage = () => {
   const isAuthenticated = useAppSelector(selectIsAuthenticated);
   const isLoading = useAppSelector(selectAuthLoading);
   const user = useAppSelector(selectUser);
+  const logoPath = useLogoPath();
 
   if (isLoading) {
     return <LoadingSpinner className="min-h-screen" />;
@@ -37,7 +39,7 @@ export const HomePage = () => {
         <div className="max-w-4xl mx-auto text-center">
           <Link to="/" className="flex items-center justify-center mb-8">
             <img
-              src="/images/logo.png"
+              src={logoPath}
               alt="LibraHub Logo"
               className="h-32 w-auto object-contain"
               onError={handleImageError}

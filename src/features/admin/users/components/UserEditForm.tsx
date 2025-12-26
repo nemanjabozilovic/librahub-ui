@@ -144,7 +144,7 @@ export const UserEditForm = ({
                       setValue('emailVerified', e.target.checked);
                     }}
                     disabled={isDisabled}
-                    className="h-4 w-4 rounded border-input text-primary focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+                    className="h-4 w-4 rounded border-input text-primary cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
                   />
                   <span className="text-sm text-foreground">Verify user email</span>
                 </label>
@@ -171,7 +171,7 @@ export const UserEditForm = ({
                 </p>
               )}
             </Field>
-            <div className="flex gap-2 pt-4">
+            <div className="form-actions">
               {!isCurrentUser && (
                 <Button type="submit" className="flex-1" disabled={!isDirty}>
                   Save Changes

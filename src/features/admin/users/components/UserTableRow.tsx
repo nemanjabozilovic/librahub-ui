@@ -39,10 +39,10 @@ export const UserTableRow = ({
   return (
     <>
       <tr
-        className="border-b hover:bg-muted/50 cursor-pointer"
+        className="table-row"
         onClick={onToggleExpanded}
       >
-        <td className="p-4">
+        <td className="table-cell">
           <div className="flex items-center gap-2">
             {isExpanded ? (
               <ChevronUp className="h-4 w-4 text-muted-foreground" />
@@ -57,21 +57,21 @@ export const UserTableRow = ({
             </div>
           </div>
         </td>
-        <td className="p-4">
+        <td className="table-cell">
           <div className="flex flex-wrap gap-1">
             {getRoleBadges(user.roles)}
           </div>
         </td>
-        <td className="p-4">{getStatusBadge(user.status)}</td>
-        <td className="p-4">
+        <td className="table-cell">{getStatusBadge(user.status)}</td>
+        <td className="table-cell">
           {user.emailVerified ? (
-            <CheckCircle className="h-5 w-5 text-green-600" />
+            <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400" />
           ) : (
-            <XCircle className="h-5 w-5 text-red-600" />
+            <XCircle className="h-5 w-5 text-red-600 dark:text-red-400" />
           )}
         </td>
-        <td className="p-4">
-          <div className="flex justify-end gap-2">
+        <td className="table-cell">
+          <div className="table-actions">
             {!isCurrentUser && (
               <>
                 {user.status === 'Active' ? (

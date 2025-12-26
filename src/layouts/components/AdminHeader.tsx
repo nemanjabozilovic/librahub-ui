@@ -3,6 +3,7 @@ import { Button } from '../../shared/components/ui/button';
 import { LogOut } from 'lucide-react';
 import { useAuth } from '../../features/auth/hooks/useAuth';
 import { getRedirectPathForRole } from '../../shared/utils/auth';
+import { ThemeToggle } from '../../shared/components/ThemeToggle';
 
 export const AdminHeader = () => {
   const navigate = useNavigate();
@@ -45,6 +46,7 @@ export const AdminHeader = () => {
             <LogOut className="h-4 w-4" />
             Logout
           </Button>
+          <ThemeToggle />
         </div>
       </div>
     </header>

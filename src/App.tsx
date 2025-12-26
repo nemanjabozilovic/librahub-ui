@@ -3,12 +3,14 @@ import { useAppDispatch, useAppSelector } from './app/hooks';
 import { initializeAuthThunk } from './features/auth/store/authThunks';
 import { selectUser, selectAccessToken } from './features/auth/store/authSelectors';
 import { AppRoutes } from './routes/AppRoutes';
+import { useTheme } from './shared/hooks/useTheme';
 
 function App() {
   const dispatch = useAppDispatch();
   const user = useAppSelector(selectUser);
   const accessToken = useAppSelector(selectAccessToken);
   const hasInitialized = useRef(false);
+  useTheme();
 
   useEffect(() => {
     if (!hasInitialized.current && accessToken && !user) {

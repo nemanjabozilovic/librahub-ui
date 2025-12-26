@@ -82,10 +82,10 @@ export const AdminUsersPage = () => {
   return (
     <AdminLayout>
       <div className="max-w-7xl">
-        <div className="mb-8 flex items-center justify-between">
+        <div className="page-header">
           <div>
-            <h1 className="text-3xl font-bold mb-2 text-foreground">Manage Users</h1>
-            <p className="text-muted-foreground">Create, update, and manage user accounts, roles, and permissions</p>
+            <h1 className="page-title">Manage Users</h1>
+            <p className="page-description">Create, update, and manage user accounts, roles, and permissions</p>
           </div>
           <Button onClick={() => setShowCreateForm(!showCreateForm)} className="gap-2">
             <UserPlus className="h-4 w-4" />
@@ -125,7 +125,7 @@ export const AdminUsersPage = () => {
         ) : (
           <Card>
             <CardHeader>
-              <div className="flex items-center justify-between">
+              <div className="card-header-flex">
                 <CardTitle>Users ({totalCount})</CardTitle>
                 <UserSearchBar value={searchQuery} onChange={setSearchQuery} />
               </div>
@@ -139,12 +139,12 @@ export const AdminUsersPage = () => {
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
-                      <tr className="border-b">
-                        <th className="text-left p-4 font-medium text-foreground">Full Name</th>
-                        <th className="text-left p-4 font-medium text-foreground">Role</th>
-                        <th className="text-left p-4 font-medium text-foreground">Status</th>
-                        <th className="text-left p-4 font-medium text-foreground">Email Verified</th>
-                        <th className="text-right p-4 font-medium text-foreground">Actions</th>
+                      <tr className="table-header">
+                        <th className="table-header-cell">Full Name</th>
+                        <th className="table-header-cell">Role</th>
+                        <th className="table-header-cell">Status</th>
+                        <th className="table-header-cell">Email Verified</th>
+                        <th className="table-header-cell-right">Actions</th>
                       </tr>
                     </thead>
                     <tbody>

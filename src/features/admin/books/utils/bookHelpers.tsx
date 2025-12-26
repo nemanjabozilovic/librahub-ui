@@ -6,25 +6,37 @@ export const getBookStatusBadge = (status: BookStatus) => {
   switch (status) {
     case 'Published':
       return (
-        <span className={cn(baseClasses, 'bg-green-100 text-green-800')}>
+        <span className={cn(
+          baseClasses,
+          'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'
+        )}>
           Published
         </span>
       );
     case 'Draft':
       return (
-        <span className={cn(baseClasses, 'bg-yellow-100 text-yellow-800')}>
+        <span className={cn(
+          baseClasses,
+          'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400'
+        )}>
           Draft
         </span>
       );
     case 'Unlisted':
       return (
-        <span className={cn(baseClasses, 'bg-gray-100 text-gray-800')}>
+        <span className={cn(
+          baseClasses,
+          'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300'
+        )}>
           Unlisted
         </span>
       );
     case 'Removed':
       return (
-        <span className={cn(baseClasses, 'bg-red-100 text-red-800')}>
+        <span className={cn(
+          baseClasses,
+          'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400'
+        )}>
           Removed
         </span>
       );

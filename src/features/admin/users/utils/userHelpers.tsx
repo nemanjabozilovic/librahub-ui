@@ -6,19 +6,28 @@ export const getStatusBadge = (status: string) => {
   switch (status) {
     case 'Active':
       return (
-        <span className={cn(baseClasses, 'bg-green-100 text-green-800')}>
+        <span className={cn(
+          baseClasses,
+          'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'
+        )}>
           Active
         </span>
       );
     case 'Disabled':
       return (
-        <span className={cn(baseClasses, 'bg-red-100 text-red-800')}>
+        <span className={cn(
+          baseClasses,
+          'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400'
+        )}>
           Disabled
         </span>
       );
     case 'Pending':
       return (
-        <span className={cn(baseClasses, 'bg-yellow-100 text-yellow-800')}>
+        <span className={cn(
+          baseClasses,
+          'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400'
+        )}>
           Pending
         </span>
       );
@@ -31,7 +40,10 @@ export const getRoleBadges = (roles: string[]) => {
   return roles.map((role) => (
     <span
       key={role}
-      className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full mr-1"
+      className={cn(
+        'px-2 py-1 text-xs font-medium rounded-full mr-1',
+        'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400'
+      )}
     >
       {role}
     </span>

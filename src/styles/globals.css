@@ -41,7 +41,7 @@
     --muted-foreground: 215 20.2% 65.1%;
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 72.2% 50.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
@@ -55,6 +55,55 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  input[type="checkbox"] {
+    @apply focus:outline-none;
+  }
+}
+
+@layer components {
+  .page-header {
+    @apply mb-8 flex items-center justify-between;
+  }
+  
+  .page-title {
+    @apply text-3xl font-bold mb-2 text-foreground;
+  }
+  
+  .page-description {
+    @apply text-muted-foreground;
+  }
+  
+  .table-header {
+    @apply border-b;
+  }
+  
+  .table-header-cell {
+    @apply text-left p-4 font-medium text-foreground;
+  }
+  
+  .table-header-cell-right {
+    @apply text-right p-4 font-medium text-foreground;
+  }
+  
+  .table-cell {
+    @apply p-4;
+  }
+  
+  .table-row {
+    @apply border-b hover:bg-muted/50 cursor-pointer;
+  }
+  
+  .table-actions {
+    @apply flex justify-end gap-2;
+  }
+  
+  .form-actions {
+    @apply flex gap-2 pt-4;
+  }
+  
+  .card-header-flex {
+    @apply flex items-center justify-between;
   }
 }
 
