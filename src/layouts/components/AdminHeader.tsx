@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button } from '../../shared/components/ui/button';
 import { LogOut } from 'lucide-react';
 import { useAuth } from '../../features/auth/hooks/useAuth';
@@ -6,12 +6,10 @@ import { getRedirectPathForRole } from '../../shared/utils/auth';
 import { ThemeToggle } from '../../shared/components/ThemeToggle';
 
 export const AdminHeader = () => {
-  const navigate = useNavigate();
   const { user, logout } = useAuth();
 
   const handleLogout = async () => {
     await logout();
-    navigate('/');
   };
 
   const getUserDisplayName = () => {

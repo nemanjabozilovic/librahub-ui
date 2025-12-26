@@ -52,8 +52,9 @@ export const useUserActions = ({
     if (updateUserThunk.fulfilled.match(result)) {
       setExpandedUserId(null);
       refreshUsers();
+      refreshStatistics();
     }
-  }, [dispatch, refreshUsers, setExpandedUserId]);
+  }, [dispatch, refreshUsers, refreshStatistics, setExpandedUserId]);
 
   const disableUser = useCallback(async (userId: string, data: DisableUserRequest): Promise<void> => {
     const result = await dispatch(disableUserThunk({ userId, data }));

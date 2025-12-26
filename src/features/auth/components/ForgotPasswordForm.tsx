@@ -127,7 +127,7 @@ export const ForgotPasswordForm = ({
                 </Button>
                 <FieldDescription className="text-center">
                   Remember your password?{' '}
-                  <Link to="/login" className="hover:font-bold transition-all">
+                  <Link to="/login" className="transition-all hover:underline">
                     Sign in
                   </Link>
                 </FieldDescription>

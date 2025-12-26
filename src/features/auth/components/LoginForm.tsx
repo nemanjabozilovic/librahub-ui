@@ -80,7 +80,7 @@ export const LoginForm = ({ className, ...props }: LoginFormProps) => {
                   <FieldLabel htmlFor="password">Password</FieldLabel>
                   <Link
                     to="/forgot-password"
-                    className="ml-auto text-sm hover:font-bold transition-all"
+                    className="ml-auto text-sm transition-all hover:underline"
                   >
                     Forgot your password?
                   </Link>
@@ -110,7 +110,7 @@ export const LoginForm = ({ className, ...props }: LoginFormProps) => {
                   Don&apos;t have an account?{' '}
                   <Link
                     to="/register"
-                    className="hover:font-bold transition-all"
+                    className="transition-all hover:underline"
                   >
                     Sign up
                   </Link>

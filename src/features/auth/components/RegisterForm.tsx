@@ -73,7 +73,7 @@ export const RegisterForm = ({ className, ...props }: RegisterFormProps) => {
               <Field>
                 <FieldDescription className="text-center">
                   Already verified?{' '}
-                  <Link to="/login" className="hover:font-bold transition-all">
+                  <Link to="/login" className="transition-all hover:underline">
                     Sign in
                   </Link>
                 </FieldDescription>
@@ -215,7 +215,7 @@ export const RegisterForm = ({ className, ...props }: RegisterFormProps) => {
                   Already have an account?{' '}
                   <Link
                     to="/login"
-                    className="hover:font-bold transition-all"
+                    className="transition-all hover:underline"
                   >
                     Sign in
                   </Link>

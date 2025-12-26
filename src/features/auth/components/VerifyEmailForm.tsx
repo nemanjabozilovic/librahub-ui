@@ -128,7 +128,7 @@ export const VerifyEmailForm = ({
                 <Field>
                   <FieldDescription className="text-center">
                     Already have an account?{' '}
-                    <Link to="/login" className="hover:font-bold transition-all">
+                    <Link to="/login" className="transition-all hover:underline">
                       Sign in
                     </Link>
                   </FieldDescription>
@@ -173,7 +173,7 @@ export const VerifyEmailForm = ({
                     </Button>
                     <FieldDescription className="text-center">
                       Already have an account?{' '}
-                      <Link to="/login" className="hover:font-bold transition-all">
+                      <Link to="/login" className="transition-all hover:underline">
                         Sign in
                       </Link>
                     </FieldDescription>

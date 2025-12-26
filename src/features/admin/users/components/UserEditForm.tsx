@@ -35,8 +35,6 @@ export const UserEditForm = ({
     register,
     handleSubmit,
     formState: { errors, isDirty },
-    setValue,
-    watch,
   } = form;
 
   const isDisabled = isCurrentUser;
@@ -138,11 +136,7 @@ export const UserEditForm = ({
                 <label className="flex items-center gap-3 cursor-pointer">
                   <input
                     type="checkbox"
-                    checked={watch('emailVerified') || false}
-                    onChange={(e) => {
-                      if (isDisabled) return;
-                      setValue('emailVerified', e.target.checked);
-                    }}
+                    {...register('emailVerified')}
                     disabled={isDisabled}
                     className="h-4 w-4 rounded border-input text-primary cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
                   />

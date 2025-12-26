@@ -116,9 +116,32 @@ export const refreshTokenThunk = createAsyncThunk(
 export const logoutThunk = createAsyncThunk(
   'auth/logout',
   async (_, { dispatch }) => {
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
+    localStorage.clear();
+    
+    const root = window.document.documentElement;
+    root.classList.remove('dark', 'light');
+    root.classList.add('light');
+    
+    if (document.cookie) {
+      document.cookie.split(';').forEach((cookie) => {
+        const eqPos = cookie.indexOf('=');
+        const name = eqPos > -1 ? cookie.substr(0, eqPos).trim() : cookie.trim();
+        document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
+        document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=${window.location.hostname}`;
+        const domainParts = window.location.hostname.split('.');
+        if (domainParts.length > 1) {
+          const domain = '.' + domainParts.slice(-2).join('.');
+          document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=${domain}`;
+        }
+      });
+    }
+    
+    if (sessionStorage.length > 0) {
+      sessionStorage.clear();
+    }
+    
     dispatch(logout());
+    window.location.href = '/';
   }
 );
 
