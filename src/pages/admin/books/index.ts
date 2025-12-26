@@ -1,0 +1,2 @@
+export { AdminBooksPage } from './AdminBooksPage';
+

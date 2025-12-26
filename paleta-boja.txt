@@ -1,0 +1,15 @@
+Osnovne boje
+
+#2962ff
+
+#231c40
+
+#b0bec5
+
+Boja za error-e:
+
+#e90b0b
+
+Boja za warning:
+
+#f47325
